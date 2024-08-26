@@ -25,20 +25,24 @@ public class PlayerMovement : MonoBehaviour
   [SerializeField] private Transform _tongue;
   [SerializeField] private Transform _tongueLine;
   private Boolean _isFire = false;
-
+  [SerializeField] private int _huntScore;
   private void Awake()
   {
     _rigidbody = GetComponent<Rigidbody2D>();
     _camer = Camera.main;
+    _scoreController = GetComponentInParent<ScoreController>();
   }
 
-
+  private ScoreController _scoreController;
 
   private void OnTriggerEnter2D(Collider2D collision)
   {
+
+
     Debug.Log("Collision accured with ", collision.gameObject);
     if (collision.GetComponent<EnemyMovement>())
     {
+      _scoreController.AddScore(_huntScore);
 
       Destroy(collision.gameObject);
     }

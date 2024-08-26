@@ -23,6 +23,7 @@ public class MoveTongueTowardMouse : MonoBehaviour
 
   private Vector3 _firstpostition;
   private Vector3 target;
+  private Animator _animator;
   private Vector2 _direction;
   [SerializeField] public float _speedToMouse = 15f;
 
@@ -42,6 +43,7 @@ public class MoveTongueTowardMouse : MonoBehaviour
 
   }
 
+
   public Vector2 finalPosition;
   public void resetStrength()
   {
@@ -50,6 +52,7 @@ public class MoveTongueTowardMouse : MonoBehaviour
 
 
   // Gets called during the collision
+
 
 
 
@@ -63,9 +66,15 @@ public class MoveTongueTowardMouse : MonoBehaviour
       {
         stickedEnemy = collision.gameObject;
         isSticked = true;
+
+        _animator = stickedEnemy.GetComponent<Animator>();
+        _animator.SetBool("IsDead", true);
+
       }
       _checkCollision = false;
     }
+
+
 
 
 
@@ -143,6 +152,7 @@ public class MoveTongueTowardMouse : MonoBehaviour
     {
       if (stickedEnemy)
       {
+
         stickedEnemy.transform.position = this.transform.position;
       }
     }
