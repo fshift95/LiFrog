@@ -65,6 +65,7 @@ public class MoveTongueTowardMouse : MonoBehaviour
       if (collision.GetComponent<EnemyMovement>())
       {
         stickedEnemy = collision.gameObject;
+        stickedEnemy.GetComponent<EnemyCollectableDrop>().RandomlyDropCollectable();
         isSticked = true;
 
         _animator = stickedEnemy.GetComponent<Animator>();

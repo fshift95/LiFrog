@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class MosquitoSpawner : MonoBehaviour
@@ -9,6 +10,7 @@ public class MosquitoSpawner : MonoBehaviour
 
     [SerializeField] private float _minimumSpawnTime;
     [SerializeField] private float _maximumSpawnTime;
+    [SerializeField] private int _maximumSpawnCount;
     private float _timeUntilSpawn;
     // Start is called before the first frame update
     void Awake()
@@ -22,8 +24,12 @@ public class MosquitoSpawner : MonoBehaviour
         _timeUntilSpawn -= Time.deltaTime;
         if (_timeUntilSpawn <= 0)
         {
-            Instantiate(_enemyPrefab, transform.position, Quaternion.identity);
-            SetTimeUntilSpawn();
+            if (GameObject.FindGameObjectsWithTag("mosquito").Length < _maximumSpawnCount)
+            {
+                Instantiate(_enemyPrefab, transform.position, Quaternion.identity);
+                SetTimeUntilSpawn();
+            }
+
         }
     }
 
