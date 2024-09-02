@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     {
         Invoke(nameof(EndGame), _timeToWaitBeforeExit);
     }
+    
     private void EndGame()
     {
         _sceneController.LoadScene("MainMenu");
