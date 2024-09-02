@@ -101,6 +101,7 @@
     <Compile Include="Assets\Scripts\Game\Enemy\EnemyScoreAllocator.cs" />
     <Compile Include="Assets\LineaContracts\Play\PlayspaceBacking.cs" />
     <Compile Include="Assets\MetaMask\Samples\Main\Scripts\Tokens\NFTPanel.cs" />
+    <Compile Include="Assets\Scripts\Setting\BackGroundSet.cs" />
     <Compile Include="Assets\MetaMask\Samples\Test\TestScript.cs" />
     <Compile Include="Assets\MetaMask\Samples\Main\Scripts\Utils\UnityBinder.cs" />
     <Compile Include="Assets\Scripts\Game\SpriteFlash.cs" />
@@ -114,6 +115,7 @@
     <Compile Include="Assets\Scripts\Game\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Game\Enemy\PlayerAwarenessController.cs" />
     <Compile Include="Assets\MetaMask\Samples\Main\Scripts\Tokens\Metadata.cs" />
+    <Compile Include="Assets\Scripts\Setting\PauseMenu.cs" />
     <Compile Include="Assets\MetaMask\Samples\Main\Scripts\UIModalManager.cs" />
     <Compile Include="Assets\Scripts\CustomMetaMaskScript\CallPlaySContract.cs" />
     <Compile Include="Assets\MetaMask\Samples\Main\Scripts\Visuals\BackgroundShape.cs" />
