@@ -80,6 +80,7 @@
     <Compile Include="Assets\MetaMask\Scripts\IO\MetaMaskUnityStorage.cs" />
     <Compile Include="Assets\MetaMask\Scripts\MetaMaskConfig.cs" />
     <Compile Include="Assets\MetaMask\Scripts\Transports\Unity\IMetaMaskUnityTransportListener.cs" />
+    <Compile Include="Assets\MetaMask\Scripts\MetaMaskSDKBackUpy.cs" />
     <Compile Include="Assets\MetaMask\Scripts\Transports\Unity\UGUI\MetaMaskOTPPanel.cs" />
     <Compile Include="Assets\MetaMask\Scripts\Cryptography\BouncyEciesProvider.cs" />
     <Compile Include="Assets\MetaMask\Scripts\Transports\Unity\UGUI\MetaMaskUnityUIHandler.cs" />

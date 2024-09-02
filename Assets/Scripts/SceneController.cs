@@ -18,7 +18,8 @@ public class SceneController : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        StartCoroutine(LoadSceneCoroutine(sceneName));
+        SceneManager.LoadScene(sceneName);
+        //   StartCoroutine(LoadSceneCoroutine(sceneName));
     }
     private IEnumerator LoadSceneCoroutine(string sceneName)
     {

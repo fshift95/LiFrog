@@ -22,6 +22,8 @@ using TMPro;
 
 using MetaMask.Contracts;
 using MetaMask.Unity.Contracts;
+using MetaMask.Transports.Unity.UI;
+
 
 
 
@@ -60,8 +62,12 @@ public class MainMenu : MonoBehaviour
     /// <param name="e">The event arguments.</param>
     public void TransactionResult(object sender, MetaMaskEthereumRequestResultEventArgs e)
     {
-        string address = MetaMaskUnity.Instance.Wallet.ConnectedAddress;
-        _textMeshProAddressss.text = address;
+        string address = MetaMaskUnity.Instance.Wallet?.ConnectedAddress;
+        if (address != null)
+        {
+            _textMeshProAddressss.text = address;
+        }
+
         Debug.LogError("Message received");
         UnityThread.executeInUpdate(() => { onTransactionResult?.Invoke(sender, e); });
     }
@@ -83,8 +89,8 @@ public class MainMenu : MonoBehaviour
     /// <summary>Raised when the wallet is disconnected.</summary>
     private void walletDisconnected(object sender, EventArgs e)
     {
-        _connectDisconnectButton.text = "Connect";
-        _connectDisconnectButton.color = Color.green;
+        //  _connectDisconnectButton.text = "Connect";
+        //   _connectDisconnectButton.color = Color.green;
 
         Debug.LogError("Wallet is Disconnecteddd");
         onWalletDisconnected?.Invoke(this, EventArgs.Empty);
@@ -95,8 +101,8 @@ public class MainMenu : MonoBehaviour
     private void walletReady(object sender, EventArgs e)
     {
 
-        _connectDisconnectButton.text = "Disconnect";
-        _connectDisconnectButton.color = Color.red;
+        // _connectDisconnectButton.text = "Disconnect";
+        // _connectDisconnectButton.color = Color.red;
 
         // UnityThread.executeInUpdate(() =>
         // {
@@ -130,34 +136,27 @@ public class MainMenu : MonoBehaviour
     }
 
 
-
+    private bool _firstInitializing = false;
 
 
     private void Awake()
     {
-        MetaMaskUnity.Instance.Initialize();
-        MetaMaskUnity.Instance.Events.WalletAuthorized += walletConnected;
-        MetaMaskUnity.Instance.Events.WalletDisconnected += walletDisconnected;
-        MetaMaskUnity.Instance.Events.WalletReady += walletReady;
-        MetaMaskUnity.Instance.Events.WalletPaused += walletPaused;
-        MetaMaskUnity.Instance.Events.EthereumRequestResultReceived += TransactionResult;
-
-        if (MetaMaskUnity.Instance.Wallet.IsConnected)
+        if (!_firstInitializing)
         {
-            _connectDisconnectButton.text = "Disconnect";
-            _connectDisconnectButton.color = Color.red;
-        }
-        else
-        {
-            _connectDisconnectButton.text = "Connect";
-            _connectDisconnectButton.color = Color.green;
+            MetaMaskUnity.Instance.Initialize();
+            MetaMaskUnity.Instance.Events.WalletAuthorized += walletConnected;
+            MetaMaskUnity.Instance.Events.WalletDisconnected += walletDisconnected;
+            MetaMaskUnity.Instance.Events.WalletReady += walletReady;
+            MetaMaskUnity.Instance.Events.WalletPaused += walletPaused;
+            MetaMaskUnity.Instance.Events.EthereumRequestResultReceived += TransactionResult;
+            _firstInitializing = true;
         }
     }
 
 
     public void Play()
     {
-
+        Debug.Log("Game Scene Loading");
         _sceneController.LoadScene("Game");
     }
     public void Check()
@@ -182,8 +181,8 @@ public class MainMenu : MonoBehaviour
         }
         else
         {
-            MetaMaskUnity.Instance.ConnectAndSign("hellooooo");
-
+            Debug.LogError("Connecting");
+            MetaMaskUnity.Instance.ConnectAndSign("Hey thrrrrrrr");
 
         }
 
@@ -191,8 +190,10 @@ public class MainMenu : MonoBehaviour
     }
     public void Exit()
     {
-        Application.Quit();
+
+        // Application.Quit();
     }
+
 
 
 

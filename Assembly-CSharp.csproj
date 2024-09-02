@@ -82,6 +82,7 @@
     <Compile Include="Assets\MetaMask\Samples\Main\Scripts\Tokens\TransferDialog.cs" />
     <Compile Include="Assets\Scripts\Game\Player\ShootingStrength.cs" />
     <Compile Include="Assets\MetaMask\Samples\Main\Scripts\Utils\Images\ImageHelper.cs" />
+    <Compile Include="Assets\Scripts\Setting\BootStrapScene.cs" />
     <Compile Include="Assets\MetaMask\Samples\Main\Scripts\Visuals\TweenIn.cs" />
     <Compile Include="Assets\Scripts\TextController.cs" />
     <Compile Include="Assets\Scripts\Game\Enemy\MosquitoSpawner.cs" />
