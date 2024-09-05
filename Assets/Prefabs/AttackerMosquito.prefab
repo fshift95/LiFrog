@@ -77,10 +77,10 @@ SpriteRenderer:
   m_Color: {r: 0.9339623, g: 0, b: 0, a: 0.050980393}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
+  m_DrawMode: 2
+  m_Size: {x: 0.6412541, y: 0.64852107}
+  m_AdaptiveModeThreshold: 1
+  m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3b74fbf04eded14d9a8349a47109d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerAwarenessDistance: 2.5
+  _playerAwarenessDistance: 1.5
 --- !u!114 &1235511412127582471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,7 +225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d5dc67f0912bb4ba093b4af1d87e3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageAmount: 10
+  _enemyHuntScore: 5
+  _damageAmount: 5
 --- !u!95 &1674832848547912904
 Animator:
   serializedVersion: 5

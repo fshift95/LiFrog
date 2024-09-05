@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+
 
 
 public class PlayerMovement : MonoBehaviour
@@ -130,11 +130,7 @@ public class PlayerMovement : MonoBehaviour
   }
 
 
-  private void OnMove(InputValue inputValue)
-  {
-    _movementInput = inputValue.Get<Vector2>();
 
-  }
 
 
 

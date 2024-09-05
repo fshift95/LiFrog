@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 //using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.InputSystem;
+
 using UnityEngine.UIElements;
 
 public class MoveTongueTowardMouse : MonoBehaviour
@@ -88,7 +88,7 @@ public class MoveTongueTowardMouse : MonoBehaviour
   {
     if (Input.GetMouseButton(0)) // strength by time
     {
-      Debug.Log("prepare to shoot");
+      //      Debug.Log("prepare to shoot");
       readyToFire = false;   // do not fire 
       if (strength < 20)
       {

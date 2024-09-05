@@ -23,6 +23,9 @@ using TMPro;
 using MetaMask.Contracts;
 using MetaMask.Unity.Contracts;
 using MetaMask.Transports.Unity.UI;
+using MetaMask.Unity.Samples;
+using evm.net.Models;
+
 
 
 
@@ -38,6 +41,10 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _connectDisconnectButton;
     [SerializeField] private TextMeshProUGUI _textMeshProAddressss;
     [SerializeField] private SceneController _sceneController;
+    [SerializeField] private Button _buttonPlay;
+    [SerializeField] private Button _buttonQuest;
+    [SerializeField] private Button _connectButton;
+    [SerializeField] private Button _disConnectButoon;
     #region Events
 
     /// <summary>Raised when the wallet is connected.</summary>
@@ -54,7 +61,7 @@ public class MainMenu : MonoBehaviour
     public event EventHandler onTransactionSent;
     /// <summary>Raised when the transaction result is received.</summary>
     /// <param name="e">The event arguments.</param>
-
+    private bool _loadDataFromContract = true;
     public event EventHandler<MetaMaskEthereumRequestResultEventArgs> onTransactionResult;
 
     /// <summary>Raised when the transaction result is received.</summary>
@@ -67,14 +74,65 @@ public class MainMenu : MonoBehaviour
         {
             _textMeshProAddressss.text = address;
         }
-
-        Debug.LogError("Message received");
         UnityThread.executeInUpdate(() => { onTransactionResult?.Invoke(sender, e); });
+
+
+
+
+        if (_loadDataFromContract)
+        {
+            if (MetaMaskUnity.Instance.Wallet.ConnectedAddress.Length > 20)
+            {
+                gameObject.GetComponent<CallPlaySContract>().CallDataPlatScmartContract();
+                _loadDataFromContract = false;
+            }
+
+        }
+
+
     }
 
+    private void OnSignSend(object sender, EventArgs e)
+    {
+
+        ModalData modalData = new ModalData();
+        modalData.headerText = "Sign Sent";
+
+        modalData.bodyText = "Sign has been sent to your wallet, please ensure you have the application open on your device";
+        UIModalManager.Instance.OpenModal(modalData);
+    }
+
+    private void OnTransactionSent(object sender, EventArgs e)
+    {
+        ModalData modalData = new ModalData();
+        modalData.headerText = "Transaction Sent";
+        modalData.bodyText = "Transaction Sent has been sent to your wallet, please ensure you have the application open on your device";
+        UIModalManager.Instance.OpenModal(modalData);
+    }
+
+    private void OnTransactionResult(object sender, MetaMaskEthereumRequestResultEventArgs e)
+    {
+
+
+        ModalData modalData = new ModalData();
+        modalData.type = ModalData.ModalType.Transaction;
+        modalData.headerText = "Result Received";
+        modalData.bodyText = string.Format("<b>Method Name:</b><br> {0} <br> <br> <b>Transaction Details:</b><br>{1}", e.Request.Method, e.Result.ToString());
+        UIModalManager.Instance.OpenModal(modalData);
+
+
+
+
+    }
 
     void OnWalletAuthorized(object sender, EventArgs e)
     {
+    }
+    public void VersionCheck()
+    {
+        CallOptions options = new CallOptions();
+        options.Value = "550000000000000";
+        Debug.LogError("SDK " + options.Value);
     }
 
     private void OnDisable()
@@ -92,6 +150,10 @@ public class MainMenu : MonoBehaviour
         //  _connectDisconnectButton.text = "Connect";
         //   _connectDisconnectButton.color = Color.green;
 
+        //  _buttonPlay.interactable = false;
+        //  _buttonQuest.interactable = false;
+        _connectButton.gameObject.SetActive(true);
+        _disConnectButoon.gameObject.SetActive(false);
         Debug.LogError("Wallet is Disconnecteddd");
         onWalletDisconnected?.Invoke(this, EventArgs.Empty);
         _textMeshProAddressss.text = "Wallet Disconnected";
@@ -100,6 +162,13 @@ public class MainMenu : MonoBehaviour
     /// <summary>Raised when the wallet is ready.</summary>
     private void walletReady(object sender, EventArgs e)
     {
+
+        //  _buttonPlay.interactable = true;
+        //  _buttonQuest.interactable = true;
+        _connectButton.gameObject.SetActive(false);
+        _disConnectButoon.gameObject.SetActive(true);
+
+
 
         // _connectDisconnectButton.text = "Disconnect";
         // _connectDisconnectButton.color = Color.red;
@@ -139,25 +208,61 @@ public class MainMenu : MonoBehaviour
     private bool _firstInitializing = false;
 
 
-    private void Awake()
+    private void Start()
     {
-        if (!_firstInitializing)
+        Time.timeScale = 1;
+        Debug.Log("atart..........");
+
+        if (MetaMaskUnity.Instance.Wallet != null)
         {
+
+            // _buttonPlay.interactable = true;
+            // _buttonQuest.interactable = true;
+
+        }
+        else
+        {
+            Debug.Log("Wallete is not Connected Yet");
+        }
+
+        if (!_firstInitializing)
+
+        {
+
             MetaMaskUnity.Instance.Initialize();
+
             MetaMaskUnity.Instance.Events.WalletAuthorized += walletConnected;
             MetaMaskUnity.Instance.Events.WalletDisconnected += walletDisconnected;
             MetaMaskUnity.Instance.Events.WalletReady += walletReady;
             MetaMaskUnity.Instance.Events.WalletPaused += walletPaused;
             MetaMaskUnity.Instance.Events.EthereumRequestResultReceived += TransactionResult;
+
             _firstInitializing = true;
         }
+
+
     }
 
 
     public void Play()
     {
-        Debug.Log("Game Scene Loading");
-        _sceneController.LoadScene("Game");
+
+        _sceneController.LoadScene("LoadGame");
+    }
+    public void PlayCroak()
+    {
+
+        _sceneController.LoadScene("LoadCroakMode");
+    }
+    public void CroakMode()
+    {
+
+        _sceneController.LoadScene("LoadCroakMode");
+    }
+    public void PlayQuest()
+    {
+
+        _sceneController.LoadScene("LoadQuest");
     }
     public void Check()
     {
@@ -170,23 +275,29 @@ public class MainMenu : MonoBehaviour
         {
             Debug.Log("is NNNot connected");
         }
+        if (MetaMaskUnity.Instance.Wallet.SelectedAddress != null)
+        {
+            Debug.Log("is connected - adress is " + MetaMaskUnity.Instance.Wallet.SelectedAddress);
+            _textMeshProAddressss.text = MetaMaskUnity.Instance.Wallet.SelectedAddress;
+        }
 
     }
     public void Connect()
     {
+        //crefactore this
         if (MetaMaskUnity.Instance.Wallet.IsConnected)
         {
-            MetaMaskUnity.Instance.Wallet.Disconnect();
-
+            // MetaMaskUnity.Instance.Wallet.Disconnect();
         }
         else
         {
-            Debug.LogError("Connecting");
-            MetaMaskUnity.Instance.ConnectAndSign("Hey thrrrrrrr");
-
+            MetaMaskUnity.Instance.ConnectAndSign("Welcome to Frogly Game");
+            MetaMaskUnity.Instance.SaveSession();
         }
-
-
+    }
+    public void Disconnect()
+    {
+        MetaMaskUnity.Instance.Wallet.Disconnect();
     }
     public void Exit()
     {

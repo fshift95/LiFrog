@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaMaskUnity.Runtime", "Me
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{ECC44C11-F696-90AD-A07F-3CE5F161E3E4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleInput.Runtime", "SimpleInput.Runtime.csproj", "{169B4376-E6EA-34F1-25E1-28766EA0B92C}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaMask.SocketIOUnity", "MetaMask.SocketIOUnity.csproj", "{55645CD5-0E0B-7A36-3FC1-9E0685B3358D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NaughtyAttributes.Core", "NaughtyAttributes.Core.csproj", "{E91EFA24-8B28-0FCF-6DE1-04533E680FD7}"
@@ -16,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NaughtyAttributes.Editor", "NaughtyAttributes.Editor.csproj", "{F142DD8E-D635-A3E5-8384-F99CD3E9D623}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaMask.NativeWebSocket", "MetaMask.NativeWebSocket.csproj", "{0554E62B-B363-8EF0-9B1B-2D8ABC169569}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleInput.Editor", "SimpleInput.Editor.csproj", "{D6B99FDF-5F04-DEAB-4E14-08AC61652FC4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{613BF3F4-2B57-78EA-B5EC-D54180EFD3DA}"
 EndProject
@@ -33,6 +37,10 @@ Global
 		{ECC44C11-F696-90AD-A07F-3CE5F161E3E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECC44C11-F696-90AD-A07F-3CE5F161E3E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECC44C11-F696-90AD-A07F-3CE5F161E3E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{169B4376-E6EA-34F1-25E1-28766EA0B92C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{169B4376-E6EA-34F1-25E1-28766EA0B92C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{169B4376-E6EA-34F1-25E1-28766EA0B92C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{169B4376-E6EA-34F1-25E1-28766EA0B92C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{55645CD5-0E0B-7A36-3FC1-9E0685B3358D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{55645CD5-0E0B-7A36-3FC1-9E0685B3358D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55645CD5-0E0B-7A36-3FC1-9E0685B3358D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,6 +65,10 @@ Global
 		{0554E62B-B363-8EF0-9B1B-2D8ABC169569}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0554E62B-B363-8EF0-9B1B-2D8ABC169569}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0554E62B-B363-8EF0-9B1B-2D8ABC169569}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6B99FDF-5F04-DEAB-4E14-08AC61652FC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6B99FDF-5F04-DEAB-4E14-08AC61652FC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6B99FDF-5F04-DEAB-4E14-08AC61652FC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6B99FDF-5F04-DEAB-4E14-08AC61652FC4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{613BF3F4-2B57-78EA-B5EC-D54180EFD3DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{613BF3F4-2B57-78EA-B5EC-D54180EFD3DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{613BF3F4-2B57-78EA-B5EC-D54180EFD3DA}.Release|Any CPU.ActiveCfg = Release|Any CPU

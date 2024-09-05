@@ -7,51 +7,111 @@ using evm.net;
 using evm.net.Models;
 using Playspace;
 using System;
+using MetaMask.Unity.Samples;
+using UnityEngine.SceneManagement;
 public class CallPlaySContract : MonoBehaviour
 {
 
-    private string PlaySmartContractAddress = "0x8216B83190F973D52E44CadD3088560F9E301100";
+    private string PlaySmartContractAddress = "0xf8A80B46fA1CD68e061E60B5F71BDde32B7F3440";
     //private Playspace.Playspace usdc;
     private void Start()
     {
 
 
     }
+    public void PlayGame()
+    {
+        SceneManager.LoadScene("Game");
+
+    }
+    public void PlayGameCroak()
+    {
+        SceneManager.LoadScene("GameCroak");
+
+    }
     public async void SCAddPlayer()
     {
+        CallOptions options = new CallOptions();
+        options.Value = "2000";
+        ModalData modalData = new ModalData();
+        modalData.headerText = "Sign Sent";
+        modalData.bodyText = "Sign has been sent to your wallet, please ensure you have the application open on your device";
+        UIModalManager.Instance.OpenModal(modalData);
 
-        var metaMask = MetaMaskUnity.Instance.Wallet;
-        Playspace.Playspace usdc = Contract.Attach<Playspace.Playspace>(metaMask, PlaySmartContractAddress);
-        var balance = await usdc.Addplayer(MetaMaskUnity.Instance.Wallet.SelectedAddress, "ddfdfdf");
-        Debug.Log(balance);
+        var name = GetComponent<TextController>().getInputName();
+        if (name.Length > 0)
+        {
+            var metaMask = MetaMaskUnity.Instance.Wallet;
+            Playspace.Playspace usdc = Contract.Attach<Playspace.Playspace>(metaMask, PlaySmartContractAddress);
+            var balance = await usdc.Addplayer(MetaMaskUnity.Instance.Wallet.ConnectedAddress, name);
+
+            Invoke("getPlayer", 3);
+            GetComponent<TextController>().ShowNameEdit();
+
+
+
+
+        }
+
+    }
+    public void OpenModal()
+    {
+        ModalData modalData = new ModalData();
+        modalData.headerText = "test Modal";
+        modalData.bodyText = "Sign has been sent to your wallet, please ensure you have the application open on your device";
+        UIModalManager.Instance.OpenModal(modalData);
+
     }
 
     public async void getPlayer()
     {
+
+
         var metaMask = MetaMaskUnity.Instance.Wallet;
         Playspace.Playspace usdc = Contract.Attach<Playspace.Playspace>(metaMask, PlaySmartContractAddress);
 
-        var playerName = await usdc.GetPlayer(MetaMaskUnity.Instance.Wallet.SelectedAddress);
-        showText("player name is : " + playerName.ToString());
-        Debug.Log(playerName);
+        Debug.LogWarning("Address issssssssssss" + MetaMaskUnity.Instance.Wallet.ConnectedAddress);
+
+        var playerName = await usdc.GetPlayer(MetaMaskUnity.Instance.Wallet.ConnectedAddress);
+
+        if (playerName.Length == 0)
+        {
+            GetComponent<TextController>().ShowNameInput();
+        }
+        else
+        {
+            GetComponent<TextController>().ShowNameEdit();
+            GetComponent<TextController>().setNameText("Name: " + playerName.ToString());
+        }
+
+
+
+
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
     public async void getScore()
     {
+
         var metaMask = MetaMaskUnity.Instance.Wallet;
+
+
         Playspace.Playspace usdc = Contract.Attach<Playspace.Playspace>(metaMask, PlaySmartContractAddress);
 
-        var score = await usdc.GetScore(MetaMaskUnity.Instance.Wallet.SelectedAddress);
-        showText("yor Score is : " + score.ToString());
-        Debug.Log(score);
+        var score = await usdc.GetScore(MetaMaskUnity.Instance.Wallet.ConnectedAddress);
+        GetComponent<PreLoadGameSolo>().setScoreText(score.ToString());
+
     }
-    public async void setScore()
+    public async void setScore(int score)
     {
         var metaMask = MetaMaskUnity.Instance.Wallet;
         Playspace.Playspace usdc = Contract.Attach<Playspace.Playspace>(metaMask, PlaySmartContractAddress);
 
-        var txt = await usdc.SetScore(MetaMaskUnity.Instance.Wallet.SelectedAddress, InputTextScore());
-        showText("seting score to 25000 " + txt.ToString());
-        Debug.Log(txt);
+        var txt = await usdc.SetScore(MetaMaskUnity.Instance.Wallet.ConnectedAddress, score);
+
     }
 
     private void showText(string text)
@@ -62,6 +122,15 @@ public class CallPlaySContract : MonoBehaviour
     {
         Debug.LogError(GetComponent<TextController>().getInputTextScore());
         return GetComponent<TextController>().getInputTextScore();
+    }
+
+
+    public void CallDataPlatScmartContract()
+    {
+        Debug.LogError("loading Smart Contractddsfsdfsdfdf");
+        getPlayer();
+        getScore();
+
     }
 
 

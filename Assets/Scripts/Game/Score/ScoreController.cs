@@ -14,4 +14,13 @@ public class ScoreController : MonoBehaviour
         Score += amount;
         OnScoreChanged.Invoke();
     }
+    public void cutScore(int amount)
+    {
+
+        Score -= amount;
+        if (Score < 0) { Score = 0; }
+        OnScoreChanged.Invoke();
+    }
 }
+
+

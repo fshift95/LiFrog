@@ -1,10 +1,12 @@
 
 using UnityEngine;
-using UnityEngine.InputSystem;
+
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject _timer;
     public void Pause()
     {
         pauseMenu.SetActive(true);
@@ -23,7 +25,36 @@ public class PauseMenu : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        _timer.GetComponent<Timer>().restartTimer();
         Time.timeScale = 1;
+
+    }
+
+    public void SaveQuest()
+    {
+
+        Time.timeScale = 0;
+        var score = GameObject.Find("Player").GetComponent<ScoreController>().Score;
+        GameObject.Find("MenuController").GetComponent<CallPubQuestSmartContract>().saveScore(score);
+
+
+    }
+    public void SaveGame()
+    {
+
+        Time.timeScale = 0;
+        var score = GameObject.Find("Player").GetComponent<ScoreController>().Score;
+        GameObject.Find("MenuController").GetComponent<CallPlaySContract>().setScore(score);
+
+
+    }
+    public void SaveCroak()
+    {
+
+        Time.timeScale = 0;
+        var score = GameObject.Find("Player").GetComponent<ScoreController>().Score;
+        GameObject.Find("MenuController").GetComponent<CallCroakSmartContract>().saveScore(score);
+
 
     }
     private void Start()
