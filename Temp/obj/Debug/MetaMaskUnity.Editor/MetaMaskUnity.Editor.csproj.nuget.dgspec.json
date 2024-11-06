@@ -1,0 +1,344 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMaskUnity.Editor.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMask.NativeWebSocket.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMask.NativeWebSocket.csproj",
+        "projectName": "MetaMask.NativeWebSocket",
+        "projectPath": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMask.NativeWebSocket.csproj",
+        "packagesPath": "C:\\Users\\shift\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\Temp\\obj\\Debug\\MetaMask.NativeWebSocket\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\shift\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMask.SocketIOUnity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMask.SocketIOUnity.csproj",
+        "projectName": "MetaMask.SocketIOUnity",
+        "projectPath": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMask.SocketIOUnity.csproj",
+        "packagesPath": "C:\\Users\\shift\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\Temp\\obj\\Debug\\MetaMask.SocketIOUnity\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\shift\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMask.NativeWebSocket.csproj": {
+                "projectPath": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMask.NativeWebSocket.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMaskUnity.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMaskUnity.Editor.csproj",
+        "projectName": "MetaMaskUnity.Editor",
+        "projectPath": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMaskUnity.Editor.csproj",
+        "packagesPath": "C:\\Users\\shift\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\Temp\\obj\\Debug\\MetaMaskUnity.Editor\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\shift\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMaskUnity.Installer.csproj": {
+                "projectPath": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMaskUnity.Installer.csproj"
+              },
+              "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMaskUnity.Runtime.csproj": {
+                "projectPath": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMaskUnity.Runtime.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMaskUnity.Installer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMaskUnity.Installer.csproj",
+        "projectName": "MetaMaskUnity.Installer",
+        "projectPath": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMaskUnity.Installer.csproj",
+        "packagesPath": "C:\\Users\\shift\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\Temp\\obj\\Debug\\MetaMaskUnity.Installer\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\shift\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMaskUnity.Runtime.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMaskUnity.Runtime.csproj",
+        "projectName": "MetaMaskUnity.Runtime",
+        "projectPath": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMaskUnity.Runtime.csproj",
+        "packagesPath": "C:\\Users\\shift\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\Temp\\obj\\Debug\\MetaMaskUnity.Runtime\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\shift\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMask.SocketIOUnity.csproj": {
+                "projectPath": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMask.SocketIOUnity.csproj"
+              },
+              "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\NaughtyAttributes.Core.csproj": {
+                "projectPath": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\NaughtyAttributes.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\NaughtyAttributes.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\NaughtyAttributes.Core.csproj",
+        "projectName": "NaughtyAttributes.Core",
+        "projectPath": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\NaughtyAttributes.Core.csproj",
+        "packagesPath": "C:\\Users\\shift\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\Temp\\obj\\Debug\\NaughtyAttributes.Core\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\shift\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

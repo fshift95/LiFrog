@@ -1,0 +1,89 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETStandard,Version=v2.1": {
+      "MetaMask.NativeWebSocket/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/MetaMask.NativeWebSocket.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MetaMask.NativeWebSocket.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MetaMask.NativeWebSocket/1.0.0": {
+      "type": "project",
+      "path": "MetaMask.NativeWebSocket.csproj",
+      "msbuildProject": "MetaMask.NativeWebSocket.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETStandard,Version=v2.1": [
+      "MetaMask.NativeWebSocket >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\shift\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMask.SocketIOUnity.csproj",
+      "projectName": "MetaMask.SocketIOUnity",
+      "projectPath": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMask.SocketIOUnity.csproj",
+      "packagesPath": "C:\\Users\\shift\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\Temp\\obj\\Debug\\MetaMask.SocketIOUnity\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\shift\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "netstandard2.1"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "projectReferences": {
+            "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMask.NativeWebSocket.csproj": {
+              "projectPath": "C:\\Users\\shift\\Desktop\\Repo\\Unity\\Lifroggy\\Lifroggy\\MetaMask.NativeWebSocket.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "netstandard2.1": {
+        "targetAlias": "netstandard2.1",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
