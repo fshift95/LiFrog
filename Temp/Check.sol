@@ -1,1 +1,0 @@
-this is the test part for connecting a new smart contract

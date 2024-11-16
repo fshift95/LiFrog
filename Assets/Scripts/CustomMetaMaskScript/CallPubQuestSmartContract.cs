@@ -51,7 +51,7 @@ public class CallPubQuestSmartContract : MonoBehaviour
 
         if (shots > 0)
         {
-            var payFee = await pubQuestContract.BurnShot(metaMask.ConnectedAddress);
+            // var payFee = await pubQuestContract.BurnShot(metaMask.ConnectedAddress);
             SceneManager.LoadScene("GameQuest");
 
 
