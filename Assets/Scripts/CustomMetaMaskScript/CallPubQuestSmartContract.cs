@@ -17,7 +17,8 @@ using Unity.VisualScripting;
 
 public class CallPubQuestSmartContract : MonoBehaviour
 {
-    private string _smartContractAddress = "0x4AC32bF046F4B09147078014fcabf5EEE09e59d7";
+    // private string _smartContractAddress = "0x4AC32bF046F4B09147078014fcabf5EEE09e59d7"; prev Address
+    private string _smartContractAddress = "0x3984AAb5B0404214646c52fcFBD21A2e0823B68b";
     public async void getPotBalance()
     {
         if (!isCWonnected())
@@ -30,6 +31,8 @@ public class CallPubQuestSmartContract : MonoBehaviour
         GetComponent<PreLoadGame>().setPotText(score);
 
     }
+
+
 
 
     public async void burnShotAndPlay()
@@ -73,12 +76,19 @@ public class CallPubQuestSmartContract : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
-    public async void saveScore(int score)
+    public async void saveScore(int score) //burn shot and save score
     {
         SignSentAlert();
+
         var metaMask = MetaMaskUnity.Instance.Wallet;
         Froggy.Froggy pubQuestContract = Contract.Attach<Froggy.Froggy>(metaMask, _smartContractAddress);
-        var shots = await pubQuestContract.SetScore(score);
+
+
+        //await pubQuestContract.SetScore(score);
+
+        //the name of method on smartcontract should be more semantic
+        await pubQuestContract.SetScores(score, metaMask.ConnectedAddress);
+
     }
 
     public async void getHighScores()

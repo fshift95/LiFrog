@@ -41,6 +41,9 @@ namespace Froggy
 		[EvmMethodInfo(Name = "setScore", View = false)]
 		Task<Transaction> SetScore(BigInteger score, CallOptions options = default);
 		
+		[EvmMethodInfo(Name = "setScores", View = false)]
+		Task<Transaction> SetScores(BigInteger score, EvmAddress _playerAddress, CallOptions options = default);
+		
 		[EvmMethodInfo(Name = "transferOwnership", View = false)]
 		Task<Transaction> TransferOwnership(EvmAddress newOwner, CallOptions options = default);
 		

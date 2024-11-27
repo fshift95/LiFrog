@@ -36,7 +36,9 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0;
         var score = GameObject.Find("Player").GetComponent<ScoreController>().Score;
 
-        GameObject.Find("MenuController").GetComponent<CallPubQuestSmartContract>().burnShotAndPlay();
+        // first burn the shot and then save the score...
+        //GameObject.Find("MenuController").GetComponent<CallPubQuestSmartContract>().burnShotAndPlay();
+        
         GameObject.Find("MenuController").GetComponent<CallPubQuestSmartContract>().saveScore(score);
 
 

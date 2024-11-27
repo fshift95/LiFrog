@@ -70,6 +70,13 @@ namespace Froggy
 			return (Task<Transaction>) InvokeMethod(method, new object[] { score, options });
 		}
 		
+		[EvmMethodInfo(Name = "setScores", View = false)]
+		public Task<Transaction> SetScores(BigInteger score, EvmAddress _playerAddress, CallOptions options = default)
+		{
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			return (Task<Transaction>) InvokeMethod(method, new object[] { score, _playerAddress, options });
+		}
+		
 		[EvmMethodInfo(Name = "transferOwnership", View = false)]
 		public Task<Transaction> TransferOwnership(EvmAddress newOwner, CallOptions options = default)
 		{
