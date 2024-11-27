@@ -2008,7 +2008,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Developed By Fshift - For Linea Hackathon . 2024
+  m_text: Developed By Fshift - Linea Oct-Nov Dev Cook-off . 2024
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e87c26d95b4c668419053e2cda0f8698, type: 2}
@@ -2283,8 +2283,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Welcome To Frogy Game - Frogly works with smartcontracts on Linea Networks
-    and $CROAK memecoin
+  m_text: Welcome To Frogy Game - Frogly works with smartcontracts deployed on Linea
+    Networks and $CROAK memecoin
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e87c26d95b4c668419053e2cda0f8698, type: 2}
@@ -2311,8 +2311,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 34
+  m_fontSizeBase: 34
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2347,7 +2347,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -751.626, y: 0, z: -768.5852, w: -8.448071}
+  m_margin: {x: -769.94556, y: 0, z: -768.5852, w: -8.448071}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
