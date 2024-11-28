@@ -28,11 +28,88 @@ namespace Croak
 		public CroakBacking(IProvider provider, EvmAddress address, Type interfaceType) : base(provider, address, interfaceType)
 		{
 		}
+		public Task<Croak> DeployNew()
+		{
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			return (Task<Croak>) InvokeMethod(method, new object[] {  });
+		}
+		
 		[EvmMethodInfo(Name = "checkPot", View = false)]
 		public Task<Transaction> CheckPot()
 		{
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
 			return (Task<Transaction>) InvokeMethod(method, new object[] {  });
+		}
+		
+		[EvmMethodInfo(Name = "getHighFirstScore", View = true)]
+		public Task<BigInteger> GetHighFirstScore()
+		{
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			return (Task<BigInteger>) InvokeMethod(method, new object[] {  });
+		}
+		
+		[EvmMethodInfo(Name = "getHighfirstdadd", View = true)]
+		public Task<EvmAddress> GetHighfirstdadd()
+		{
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			return (Task<EvmAddress>) InvokeMethod(method, new object[] {  });
+		}
+		
+		[EvmMethodInfo(Name = "getHighsecondScore", View = true)]
+		public Task<BigInteger> GetHighsecondScore()
+		{
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			return (Task<BigInteger>) InvokeMethod(method, new object[] {  });
+		}
+		
+		[EvmMethodInfo(Name = "getHighseconddadd", View = true)]
+		public Task<EvmAddress> GetHighseconddadd()
+		{
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			return (Task<EvmAddress>) InvokeMethod(method, new object[] {  });
+		}
+		
+		[EvmMethodInfo(Name = "getHightest", View = true)]
+		[return: EvmParameterInfo(Type = "tuple")]
+		public Task<Tuple<BigInteger, BigInteger, BigInteger, EvmAddress, EvmAddress, EvmAddress>> GetHightest()
+		{
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			return (Task<Tuple<BigInteger, BigInteger, BigInteger, EvmAddress, EvmAddress, EvmAddress>>) InvokeMethod(method, new object[] {  });
+		}
+		
+		[EvmMethodInfo(Name = "getHighthirdScore", View = true)]
+		public Task<BigInteger> GetHighthirdScore()
+		{
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			return (Task<BigInteger>) InvokeMethod(method, new object[] {  });
+		}
+		
+		[EvmMethodInfo(Name = "getHighthirdadd", View = true)]
+		public Task<EvmAddress> GetHighthirdadd()
+		{
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			return (Task<EvmAddress>) InvokeMethod(method, new object[] {  });
+		}
+		
+		[EvmMethodInfo(Name = "getPlayerScore", View = true)]
+		public Task<BigInteger> GetPlayerScore(EvmAddress _playerAddress, CallOptions options = default)
+		{
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			return (Task<BigInteger>) InvokeMethod(method, new object[] { _playerAddress, options });
+		}
+		
+		[EvmMethodInfo(Name = "getPotSetTime", View = true)]
+		public Task<BigInteger> GetPotSetTime()
+		{
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			return (Task<BigInteger>) InvokeMethod(method, new object[] {  });
+		}
+		
+		[EvmMethodInfo(Name = "getTotalStokenBalance", View = true)]
+		public Task<BigInteger> GetTotalStokenBalance()
+		{
+			var method = System.Reflection.MethodBase.GetCurrentMethod();
+			return (Task<BigInteger>) InvokeMethod(method, new object[] {  });
 		}
 		
 		[EvmMethodInfo(Name = "prizeDistributer", View = false)]
@@ -56,81 +133,11 @@ namespace Croak
 			return (Task<Transaction>) InvokeMethod(method, new object[] { newOwner, options });
 		}
 		
-		public Task<Croak> DeployNew()
+		[EvmMethodInfo(Name = "withdraw", View = false)]
+		public Task<Transaction> Withdraw()
 		{
 			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			return (Task<Croak>) InvokeMethod(method, new object[] {  });
-		}
-		
-		[EvmMethodInfo(Name = "getHighfirstdadd", View = true)]
-		public Task<EvmAddress> GetHighfirstdadd()
-		{
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			return (Task<EvmAddress>) InvokeMethod(method, new object[] {  });
-		}
-		
-		[EvmMethodInfo(Name = "getHighFirstScore", View = true)]
-		public Task<BigInteger> GetHighFirstScore()
-		{
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			return (Task<BigInteger>) InvokeMethod(method, new object[] {  });
-		}
-		
-		[EvmMethodInfo(Name = "getHighseconddadd", View = true)]
-		public Task<EvmAddress> GetHighseconddadd()
-		{
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			return (Task<EvmAddress>) InvokeMethod(method, new object[] {  });
-		}
-		
-		[EvmMethodInfo(Name = "getHighsecondScore", View = true)]
-		public Task<BigInteger> GetHighsecondScore()
-		{
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			return (Task<BigInteger>) InvokeMethod(method, new object[] {  });
-		}
-		
-		[EvmMethodInfo(Name = "getHightest", View = true)]
-		[return: EvmParameterInfo(Type = "tuple")]
-		public Task<Tuple<BigInteger, BigInteger, BigInteger, EvmAddress, EvmAddress, EvmAddress>> GetHightest()
-		{
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			return (Task<Tuple<BigInteger, BigInteger, BigInteger, EvmAddress, EvmAddress, EvmAddress>>) InvokeMethod(method, new object[] {  });
-		}
-		
-		[EvmMethodInfo(Name = "getHighthirdadd", View = true)]
-		public Task<EvmAddress> GetHighthirdadd()
-		{
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			return (Task<EvmAddress>) InvokeMethod(method, new object[] {  });
-		}
-		
-		[EvmMethodInfo(Name = "getHighthirdScore", View = true)]
-		public Task<BigInteger> GetHighthirdScore()
-		{
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			return (Task<BigInteger>) InvokeMethod(method, new object[] {  });
-		}
-		
-		[EvmMethodInfo(Name = "getPlayerScore", View = true)]
-		public Task<BigInteger> GetPlayerScore(EvmAddress _playerAddress, CallOptions options = default)
-		{
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			return (Task<BigInteger>) InvokeMethod(method, new object[] { _playerAddress, options });
-		}
-		
-		[EvmMethodInfo(Name = "getPotSetTime", View = true)]
-		public Task<BigInteger> GetPotSetTime()
-		{
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			return (Task<BigInteger>) InvokeMethod(method, new object[] {  });
-		}
-		
-		[EvmMethodInfo(Name = "getTotalStokenBalance", View = true)]
-		public Task<BigInteger> GetTotalStokenBalance()
-		{
-			var method = System.Reflection.MethodBase.GetCurrentMethod();
-			return (Task<BigInteger>) InvokeMethod(method, new object[] {  });
+			return (Task<Transaction>) InvokeMethod(method, new object[] {  });
 		}
 		
 	}

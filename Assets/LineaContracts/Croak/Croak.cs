@@ -23,8 +23,42 @@ namespace Croak
 	#endif
 	public interface Croak : IContract
 	{
+		[EvmConstructorMethod]
+		Task<Croak> DeployNew();
+		
 		[EvmMethodInfo(Name = "checkPot", View = false)]
 		Task<Transaction> CheckPot();
+		
+		[EvmMethodInfo(Name = "getHighFirstScore", View = true)]
+		Task<BigInteger> GetHighFirstScore();
+		
+		[EvmMethodInfo(Name = "getHighfirstdadd", View = true)]
+		Task<EvmAddress> GetHighfirstdadd();
+		
+		[EvmMethodInfo(Name = "getHighsecondScore", View = true)]
+		Task<BigInteger> GetHighsecondScore();
+		
+		[EvmMethodInfo(Name = "getHighseconddadd", View = true)]
+		Task<EvmAddress> GetHighseconddadd();
+		
+		[EvmMethodInfo(Name = "getHightest", View = true, Returns = new[] {"uint256","uint256","uint256","address","address","address"})]
+		[return: EvmParameterInfo(Type = "tuple")]
+		Task<Tuple<BigInteger, BigInteger, BigInteger, EvmAddress, EvmAddress, EvmAddress>> GetHightest();
+		
+		[EvmMethodInfo(Name = "getHighthirdScore", View = true)]
+		Task<BigInteger> GetHighthirdScore();
+		
+		[EvmMethodInfo(Name = "getHighthirdadd", View = true)]
+		Task<EvmAddress> GetHighthirdadd();
+		
+		[EvmMethodInfo(Name = "getPlayerScore", View = true)]
+		Task<BigInteger> GetPlayerScore(EvmAddress _playerAddress, CallOptions options = default);
+		
+		[EvmMethodInfo(Name = "getPotSetTime", View = true)]
+		Task<BigInteger> GetPotSetTime();
+		
+		[EvmMethodInfo(Name = "getTotalStokenBalance", View = true)]
+		Task<BigInteger> GetTotalStokenBalance();
 		
 		[EvmMethodInfo(Name = "prizeDistributer", View = false)]
 		Task<Transaction> PrizeDistributer();
@@ -35,39 +69,8 @@ namespace Croak
 		[EvmMethodInfo(Name = "transferOwnership", View = false)]
 		Task<Transaction> TransferOwnership(EvmAddress newOwner, CallOptions options = default);
 		
-		[EvmConstructorMethod]
-		Task<Croak> DeployNew();
-		
-		[EvmMethodInfo(Name = "getHighfirstdadd", View = true)]
-		Task<EvmAddress> GetHighfirstdadd();
-		
-		[EvmMethodInfo(Name = "getHighFirstScore", View = true)]
-		Task<BigInteger> GetHighFirstScore();
-		
-		[EvmMethodInfo(Name = "getHighseconddadd", View = true)]
-		Task<EvmAddress> GetHighseconddadd();
-		
-		[EvmMethodInfo(Name = "getHighsecondScore", View = true)]
-		Task<BigInteger> GetHighsecondScore();
-		
-		[EvmMethodInfo(Name = "getHightest", View = true, Returns = new[] {"uint256","uint256","uint256","address","address","address"})]
-		[return: EvmParameterInfo(Type = "tuple")]
-		Task<Tuple<BigInteger, BigInteger, BigInteger, EvmAddress, EvmAddress, EvmAddress>> GetHightest();
-		
-		[EvmMethodInfo(Name = "getHighthirdadd", View = true)]
-		Task<EvmAddress> GetHighthirdadd();
-		
-		[EvmMethodInfo(Name = "getHighthirdScore", View = true)]
-		Task<BigInteger> GetHighthirdScore();
-		
-		[EvmMethodInfo(Name = "getPlayerScore", View = true)]
-		Task<BigInteger> GetPlayerScore(EvmAddress _playerAddress, CallOptions options = default);
-		
-		[EvmMethodInfo(Name = "getPotSetTime", View = true)]
-		Task<BigInteger> GetPotSetTime();
-		
-		[EvmMethodInfo(Name = "getTotalStokenBalance", View = true)]
-		Task<BigInteger> GetTotalStokenBalance();
+		[EvmMethodInfo(Name = "withdraw", View = false)]
+		Task<Transaction> Withdraw();
 		
 	}
 }
